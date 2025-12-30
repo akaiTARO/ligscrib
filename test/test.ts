@@ -17,8 +17,8 @@ describe('ligscribe CLI', () => {
         );
     });
 
-    it('should rename icons', () => {
-        expect(output).toContain('✔  added arrow-left as arrow_left');
+    it('should use filenames as ligatures', () => {
+        expect(output).toContain('✔  added arrow-left');
         expect(output).toContain('✔  added www');
     });
 
@@ -42,7 +42,7 @@ describe('ligscribe CLI', () => {
     it('should contain given icon ligatures in svg', () => {
         const svg = fs.readFileSync(`${__dirname}/output/icons.svg`, { encoding: 'utf-8' });
 
-        expect(svg).toContain('glyph-name="arrow_left"');
+        expect(svg).toContain('glyph-name="arrow-left"');
         expect(svg).toContain('glyph-name="www"');
     })
 
@@ -53,8 +53,8 @@ describe('ligscribe CLI', () => {
 
         expect(font.layout('www').glyphs).toHaveLength(1);
         expect(font.layout('www').glyphs[0].isLigature).toBeTruthy();
-        expect(font.layout('arrow_left').glyphs).toHaveLength(1);
-        expect(font.layout('arrow_left').glyphs[0].isLigature).toBeTruthy();
+        expect(font.layout('arrow-left').glyphs).toHaveLength(1);
+        expect(font.layout('arrow-left').glyphs[0].isLigature).toBeTruthy();
 
         expect(font.layout('foobar').glyphs.every(g => !g.isLigature)).toBeTruthy();
     });

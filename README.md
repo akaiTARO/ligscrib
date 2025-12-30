@@ -36,7 +36,7 @@ Options:
 
 ```bash
 $ ligscrip raw-icons/* --out-dir out --example
-✔  added arrow-left as arrow_left
+✔  added arrow-left
 ✔  added check
 ✔  added error
 ✔  added information
