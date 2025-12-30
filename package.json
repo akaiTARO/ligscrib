@@ -30,6 +30,7 @@
   "scripts": {
     "build": "tsc",
     "test": "npm run build && jest",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run build",
     "publish-next": "npm run build && npm publish --tag next",
     "publish-latest-only": "npm run build && npm publish",
